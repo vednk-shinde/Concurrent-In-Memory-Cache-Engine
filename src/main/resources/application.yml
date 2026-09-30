@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: concurrent-cache-engine
+
+cache:
+  strategy: LRU          # LRU | LFU | SHARDED_LRU
+  capacity: 1000
+  shard-count: 16         # only used when strategy is SHARDED_LRU
+  default-ttl-millis: -1  # -1 = no default expiry
+  active-expiry-enabled: true
+  active-expiry-sweep-interval-millis: 1000
